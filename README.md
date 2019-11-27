@@ -10,4 +10,7 @@ kat hogehoge.py
 (return hogehoge(20XX年XX月XX日版).py)
 ```
 
+## how to create a pull request
+test.shを実行して、テストが全て通ることを確認してからにしてください
+
 enjoy!
