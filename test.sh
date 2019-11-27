@@ -35,4 +35,4 @@ fi
 
 cd ..
 
-#rm -rf kat_test
+rm -rf kat_test
