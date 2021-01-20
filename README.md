@@ -14,6 +14,8 @@ kat hogehoge.py
 ```
 
 ## how to create a pull request
-test.shを実行して、テストが全て通ることを確認してからにしてください
+test.shを実行して、テストが全て通ることを確認してからにしてください。
+
+一応masterへのプルリクとpushでテストが走るようになってます。
 
 enjoy!
