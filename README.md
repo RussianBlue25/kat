@@ -1,3 +1,5 @@
+![CI](https://github.com/RussianBlue25/kat/workflows/CI/badge.svg)
+
 # kat
 このリポジトリは研究室向けの内輪ネタです。なんの役にも立ちません。
 いろいろとプルリクを送ったりして遊んでGitHubに慣れてみてください。
