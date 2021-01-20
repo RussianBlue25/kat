@@ -14,6 +14,7 @@ touch kattest.piyo
 if [ -e "kattest$(date "+(%Y年%m月%d日版)").fuga.hoge" ]; then
   echo "kattest.fuga.hoge ok"
 else
+  echo "kattest.fuga.hoge ng"
   exit 1
 fi
 
@@ -22,6 +23,7 @@ fi
 if [ -e "kattest$(date "+(%Y年%m月%d日版)")" ]; then
   echo "kattest ok"
 else
+  echo "kattest ng"
   exit 1
 fi
 
@@ -30,6 +32,7 @@ fi
 if [ -e "kattest$(date "+(%Y年%m月%d日版)").piyo" ]; then
   echo "kattest.piyo ok"
 else
+  echo "kattest.piyo ng"
   exit 1
 fi
 
