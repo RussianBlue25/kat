@@ -20,7 +20,7 @@ fi
 
 ../kat kattest.fuga.hoge
 
-if [ -e "kattest$(date "+(%Y年%m月%d日%H時%M分%S秒版)").fuga.hoge" ]; then
+if find . | grep -E 'kattest\([0-9]+年[0-9]+月[0-9]+日[0-9]+時[0-9]+分[0-9]+秒版\).fuga.hoge'; then
   echo "kattest$(date "+(%Y年%m月%d日版)").fuga.hoge ok"
 else
   echo "kattest$(date "+(%Y年%m月%d日版)").fuga.hoge ng"
@@ -38,7 +38,7 @@ fi
 
 ../kat kattest
 
-if [ -e "kattest$(date "+(%Y年%m月%d日%H時%M分%S秒版)")" ]; then
+if find . | grep -E 'kattest\([0-9]+年[0-9]+月[0-9]+日[0-9]+時[0-9]+分[0-9]+秒版\)'; then
   echo "kattest$(date "+(%Y年%m月%d日版)") ok"
 else
   echo "kattest$(date "+(%Y年%m月%d日版)") ng"
@@ -56,7 +56,7 @@ fi
 
 ../kat kattest.piyo
 
-if [ -e "kattest$(date "+(%Y年%m月%d日%H時%M分%S秒版)").piyo" ]; then
+if find . | grep -E 'kattest\([0-9]+年[0-9]+月[0-9]+日[0-9]+時[0-9]+分[0-9]+秒版\).piyo'; then
   echo "kattest$(date "+(%Y年%m月%d日版)").piyo ok"
 else
   echo "kattest$(date "+(%Y年%m月%d日版)").piyo ng"
