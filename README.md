@@ -5,10 +5,9 @@
 いろいろとプルリクを送ったりして遊んでGitHubに慣れてみてください。
 
 ## how to use
-/usr/local/binあたりにkatを放り込んでください。
 ```
-chmod a+x /usr/local/bin/kat #これいらないかも
-exec $SHELL -l
+brew tap RussianBlue25/tap
+brew install RussianBlue25/tap/kat
 kat hogehoge.py
 (return hogehoge(20XX年XX月XX日版).py)
 ```
