@@ -3,22 +3,22 @@
 # 日付部を作成
 year=$(date "+%Y年")
 while getopts ":-:" OPT; do
-    case $OPT in
-        -)
-            case $OPTARG in
-                reiwa)
-                    year=令和$(($(date "+%Y") - 2018))年
-                    ;;
-                *)
-                    ;;
-            esac
-            
-            shift
-            ;;
-        *)
-            ;;
-    esac
-    
+	case $OPT in
+		-)
+			case $OPTARG in
+				reiwa)
+					year=令和$(($(date "+%Y") - 2018))年
+					;;
+				*)
+					;;
+			esac
+
+			shift
+			;;
+		*)
+			;;
+	esac
+
 done
 date=$(date "+${year}%m月%d日")
 body=\(${date}版\)
@@ -29,8 +29,8 @@ tail=${1#${1%%.*}}
 
 # 同一ディレクトリに同一日に取ったバックアップがある場合、時刻を追加
 if find "$(dirname "$1")" -name "$head$body$tail" | grep ".*"; then
-    # 日付部は変数dateに格納
-    body=\($date$(date "+%H時%M分%S秒")版\)
+	# 日付部は変数dateに格納
+	body=\($date$(date "+%H時%M分%S秒")版\)
 fi
 
 cp -pR "$1" "$head$body$tail"
