@@ -1,13 +1,31 @@
 #!/bin/sh
 
+# 日付部を作成
+year=$(date "+%Y年")
+while getopts ":-:" OPT; do
+    case $OPT in
+        -)
+            case $OPTARG in
+                reiwa)
+                    year=令和$(($(date "+%Y") - 2018))年
+                    ;;
+                *)
+                    ;;
+            esac
+            
+            shift
+            ;;
+        *)
+            ;;
+    esac
+    
+done
+date=$(date "+${year}%m月%d日")
+body=\(${date}版\)
+
 # ファイルの拡張子とそれ以外を抽出
 head=${1%%.*}
 tail=${1#${1%%.*}}
-
-# 日付部を作成
-year=$(date "+%Y年")
-date=$(date "+${year}%m月%d日")
-body=\(${date}版\)
 
 # 同一ディレクトリに同一日に取ったバックアップがある場合、時刻を追加
 if find "$(dirname "$1")" -name "$head$body$tail" | grep ".*"; then
