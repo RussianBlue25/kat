@@ -6,12 +6,13 @@ tail=${1#${1%%.*}}
 
 # 日付部を作成
 year=$(date "+%Y年")
-date=\($(date "+$year%m月%d日")版\)
+date=$(date "+${year}%m月%d日")
+body=\(${date}版\)
 
 # 同一ディレクトリに同一日に取ったバックアップがある場合、時刻を追加
-if find "$(dirname "$1")" -name "$head$date$tail" | grep ".*"; then
+if find "$(dirname "$1")" -name "$head$body$tail" | grep ".*"; then
     # 日付部は変数dateに格納
-    date=$(date "+(%Y年%m月%d日%H時%M分%S秒版)")
+    body=\($date$(date "+%H時%M分%S秒")版\)
 fi
 
-cp -pR "$1" "$head$date$tail"
+cp -pR "$1" "$head$body$tail"
