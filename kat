@@ -2,6 +2,7 @@
 
 # 日付部を作成
 year=$(date "+%Y年")
+date=$(date "+%m月%d日")
 while getopts ":-:" OPT; do
 	case $OPT in
 		-)
@@ -20,8 +21,7 @@ while getopts ":-:" OPT; do
 	esac
 
 done
-date=$(date "+${year}%m月%d日")
-body=\(${date}版\)
+body=\($year${date}版\)
 
 # ファイルの拡張子とそれ以外を抽出
 head=${1%%.*}
@@ -30,7 +30,7 @@ tail=${1#${1%%.*}}
 # 同一ディレクトリに同一日に取ったバックアップがある場合、時刻を追加
 if find "$(dirname "$1")" -name "$head$body$tail" | grep ".*"; then
 	# 日付部は変数dateに格納
-	body=\($date$(date "+%H時%M分%S秒")版\)
+	body=\($year$date$(date "+%H時%M分%S秒")版\)
 fi
 
 cp -pR "$1" "$head$body$tail"
