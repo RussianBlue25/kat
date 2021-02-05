@@ -17,6 +17,8 @@ brew install RussianBlue25/tap/kat
 ```
 kat hogehoge.py
 (return hogehoge(20XX年XX月XX日版).py)
+kat --reiwa hogehoge.py
+(return hogehoge(令和XX年XX月XX日版).py)
 ```
 
 ## How to create a pull request
